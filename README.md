@@ -58,8 +58,8 @@ The launcher sets up the registry to reflect a full GunBound installation. Key v
 
 The game client is then launched directly:
 - A 48-byte array is created, containing 
-    - ASCII-encoded username (bytes 0-15). Padded with `0`s
-    - ASCII-encoded password (bytes 16-31) Padded with `0`s
+    - ASCII-encoded username (bytes 0-15). Padded with `0`
+    - ASCII-encoded password (bytes 16-31) Padded with `0`
     - The last set of 16 bytes remains safely as `0`s. They appear to used be for a "invite-to-game" feature 
 - Data is then encrypted with AES-128 in ECB mode. The key is fixed in the client as `FAEE85F24073D9161390197F6E562A67`
 - The output bytes are converted to an uppercase hex string. The result should be a 96-character credentials string
@@ -70,5 +70,7 @@ The game client is then launched directly:
     - Calling `CreateProcess` with the credentials string for the `lpCommandLine` parameter solves this issue
 
 # License
+
 MIT
+
 Game client and artwork assets belong to Softnyx
